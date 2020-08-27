@@ -12,7 +12,7 @@ const routes = Router();
 routes.use(cors());
 routes.get('/', (req, res) => res.json({ result: 'TEST-API' }));
 
-//routes USER
+//routes USERs
 routes.post('/users', UserController.store);
 routes.put('/users/:uid', UserController.update);
 
