@@ -1,6 +1,17 @@
 import User from '../models/User';
 
 class UserController {
+  async index(req, res) {
+    try {
+      const users = await User.findAll();
+      return res.json({ users });
+    } catch (error) {
+      return res.json({ error });
+    }
+  }
+
+
+
   async store(req, res) {
     try {
       const { email } = req.body;
